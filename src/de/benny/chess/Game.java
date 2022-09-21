@@ -6,9 +6,7 @@ public class Game {
 
     public static void main(String[] args) {
         Game game = new Game();
-        for (Square square : game.board.squareList){
-            System.out.println(square);
-        }
+        game.board.squareList.forEach(System.out::println);
     }
 
 }
