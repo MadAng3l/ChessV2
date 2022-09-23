@@ -4,9 +4,9 @@ public class Square {
     Piece piece;
     Coordinates coordinates;
 
-    public Square(char column,int row, char notation){
+    public Square(char column,int row){
         this.coordinates = new Coordinates(column, row);
-        this.piece = new Piece(notation);
+        this.piece = new Piece();
     }
 
     //needed for test
