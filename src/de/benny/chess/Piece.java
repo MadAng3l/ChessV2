@@ -1,16 +1,19 @@
 package de.benny.chess;
 
-public class Piece {
+public interface Piece {
 
-    char notation;
-    public Piece(){
+    char notation = 0;
 
-    }
+    public void moveTo();
 
-    @Override
+    public void availableSquare();
+
+
+
+   /* @Override
     public String toString() {
         return "Piece{" +
                 "notation=" + notation +
                 '}';
-    }
+    }*/
 }
