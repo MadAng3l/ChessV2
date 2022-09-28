@@ -27,7 +27,7 @@ public class Board {
             char fenChar = fen.charAt(i);
             switch (fenChar){
                 case 'r','n','b','q','k','p','R','N','B','Q','K','P':
-                    Square square = new Square(column,row);
+                    Square square = new Square(column,row,fenChar);
                     squareList.add(square);
                     column += 1;
                     break;
@@ -38,7 +38,7 @@ public class Board {
                 case '1','2','3','4','5','6','7','8':
                     int skip = Character.getNumericValue(fenChar);
                     for (int j=1; j <= skip; j++){
-                        Square emptySquare = new Square(column,row);
+                        Square emptySquare = new Square(column,row,fenChar);
                         squareList.add(emptySquare);
                         column +=1;
                     }

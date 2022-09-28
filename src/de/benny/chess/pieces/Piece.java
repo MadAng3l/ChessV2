@@ -1,13 +1,12 @@
-package de.benny.chess;
+package de.benny.chess.pieces;
 
 public interface Piece {
-
-    char notation = 0;
 
     public void moveTo();
 
     public void availableSquare();
 
+    public void capture();
 
 
    /* @Override

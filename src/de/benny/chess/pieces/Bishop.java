@@ -1,8 +1,16 @@
 package de.benny.chess.pieces;
-import de.benny.chess.Piece;
 
 public class Bishop implements Piece {
-    public Bishop() {
+
+    boolean white;
+    public Bishop(char fenChar) {
+        if (fenChar == 'B'){
+            this.white = true;
+        }
+
+    }
+    @Override
+    public void availableSquare() {
 
     }
 
@@ -12,12 +20,15 @@ public class Bishop implements Piece {
     }
 
     @Override
-    public void availableSquare() {
+    public void capture(){
 
     }
 
     @Override
     public String toString() {
-        return null;
+        if (white){
+            return "White Bishop";
+        }
+        return "Black Bishop";
     }
 }
