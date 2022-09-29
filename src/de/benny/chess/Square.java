@@ -13,6 +13,8 @@ public class Square {
             case 'k', 'K' -> this.piece = new King(fenChar);
             case 'n', 'N' -> this.piece = new Knight(fenChar);
             case 'p', 'P' -> this.piece = new Pawn(fenChar);
+            case 'q', 'Q' -> this.piece = new Queen(fenChar);
+            case 'r', 'R' -> this.piece = new Rook(fenChar);
         }
     }
 

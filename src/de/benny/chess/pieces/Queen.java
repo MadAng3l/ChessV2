@@ -1,6 +1,12 @@
 package de.benny.chess.pieces;
 
 public class Queen implements Piece{
+    boolean white;
+    public Queen(char fenChar){
+        if (fenChar == 'Q'){
+            this.white = true;
+        }
+    }
 
 
     @Override
@@ -16,5 +22,13 @@ public class Queen implements Piece{
     @Override
     public void capture() {
 
+    }
+
+    @Override
+    public String toString() {
+        if (white){
+            return "White Queen";
+        }
+        return "Black Queen";
     }
 }
