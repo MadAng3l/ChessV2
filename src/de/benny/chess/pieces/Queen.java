@@ -7,6 +7,10 @@ public class Queen implements Piece{
             this.white = true;
         }
     }
+    @Override
+    public char getFenChar(){
+        return '♕';
+    }
 
 
     @Override

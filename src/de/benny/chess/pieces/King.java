@@ -8,6 +8,10 @@ public class King implements Piece{
             this.white = true;
         }
     }
+    @Override
+    public char getFenChar(){
+        return '♔';
+    }
 
 
     @Override

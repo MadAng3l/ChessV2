@@ -10,6 +10,10 @@ public class Bishop implements Piece {
 
     }
     @Override
+    public char getFenChar(){
+        return '♗';
+    }
+    @Override
     public void availableSquare() {
 
     }

@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-    List<Square> squareList = new ArrayList<>();
-    String startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";//startposition and information of a chessgame
+    //List<Square> squareList = new ArrayList<>();
+    Square[][] squares = new Square[8][8];
+    String startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";//startposition and information of a chessgame
     public Board(){
         //fillBoard();
         fillBoardByFEN(startFEN);
@@ -22,29 +23,44 @@ public class Board {
 
     private void fillBoardByFEN(String fen) { //Forsyth-Edwards-Notation, standart notation for describing a particular chess board position
         char column = 'A';
-        int row = 8;
+        int columnIndex = 0;
+        int row = 0;
         for (int i=0; i < fen.length(); i++){
             char fenChar = fen.charAt(i);
             switch (fenChar){
                 case 'r','n','b','q','k','p','R','N','B','Q','K','P':
-                    Square square = new Square(column,row,fenChar);
-                    squareList.add(square);
-                    column += 1;
+                    Square square = new Square((char) (column+columnIndex),row,fenChar);
+                    squares[row][columnIndex] = square;
+                    columnIndex += 1;
                     break;
                 case '/':
-                    column = 'A';
-                    row -= 1;
+                    columnIndex = 0;
+                    row += 1;
                     break;
                 case '1','2','3','4','5','6','7','8':
                     int skip = Character.getNumericValue(fenChar);
                     for (int j=1; j <= skip; j++){
-                        Square emptySquare = new Square(column,row,fenChar);
-                        squareList.add(emptySquare);
-                        column +=1;
+                        Square emptySquare = new Square((char)(column+columnIndex),row,fenChar);
+                        squares[row][columnIndex] = emptySquare;
+                        columnIndex +=1;
                     }
                     break;
-                default: return;
+                default: break;
             }
         }
+    }
+    public void printToConsole(){
+        for (int i = 0; i<8; i++){
+            for (int j = 0; j<8; j++){
+                Square square = squares[i][j];
+                System.out.print(square.print());
+            }
+            System.out.println();
+        }
+    }
+    public void move(int row, int column, int newRow, int newColumn){
+        Square square = squares[row][column];
+        squares[newRow][newColumn].piece = square.piece;
+        square.piece = null;
     }
 }

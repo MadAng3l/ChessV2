@@ -18,6 +18,16 @@ public class Square {
         }
     }
 
+    public boolean isEmpty(){
+        return piece == null;
+    }
+
+    public char print(){
+        if (isEmpty()){
+            return ' ';
+        }
+        return this.piece.getFenChar();
+    }
     //needed for test
     @Override
     public String toString() {

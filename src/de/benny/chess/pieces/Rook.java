@@ -7,6 +7,10 @@ public class Rook implements Piece {
             this.white = true;
         }
     }
+    @Override
+    public char getFenChar(){
+        return '♖';
+    }
 
     @Override
     public void moveTo() {

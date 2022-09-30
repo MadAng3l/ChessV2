@@ -1,6 +1,7 @@
 package de.benny.chess.pieces;
 
-public interface Piece {
+public interface Piece{
+    public char getFenChar();
 
     public void moveTo();
 
@@ -16,3 +17,4 @@ public interface Piece {
                 '}';
     }*/
 }
+//♔ ♕ ♖ ♗ ♘ ♙ ♚ ♛ ♜ ♝ ♞ ♟ ■ □
