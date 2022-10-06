@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Board {
     //List<Square> squareList = new ArrayList<>();
-    Square[][] squares = new Square[8][8];
+    public Square[][] squares = new Square[8][8];
     String startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";//startposition and information of a chessgame
     public Board(){
         //fillBoard();
@@ -49,6 +49,12 @@ public class Board {
             }
         }
     }
+
+    public boolean isOnBoard(int row, int column){
+        return row < 8 && column < 8 && row >= 0 && column >= 0;
+    }
+
+
     public void printToConsole(){
         for (int i = 0; i<8; i++){
             for (int j = 0; j<8; j++){

@@ -1,20 +1,34 @@
 package de.benny.chess.pieces;
 
-public interface Piece{
-    public char getFenChar();
+import de.benny.chess.Board;
+import de.benny.chess.Square;
 
-    public void moveTo();
+import java.util.List;
 
-    public void availableSquare();
+public abstract class Piece{
+    char uniCode;
+    char fenChar;
+    boolean isWhite;
+    public Piece(char uniCode,char fenChar, boolean isWhite){
+        this.uniCode = uniCode;
+        this.fenChar = fenChar;
+        this.isWhite = isWhite;
 
-    public void capture();
+    }
 
+    char getUniCode() {
+        return uniCode;
+    }
 
-   /* @Override
-    public String toString() {
-        return "Piece{" +
-                "notation=" + notation +
-                '}';
-    }*/
+    char getFenChar() {
+        return fenChar;
+    }
+
+    boolean isWhite() {
+        return isWhite;
+    }
+
+    public abstract List<Square> availableSquare(int row, int column, Board board);
+
 }
 //♔ ♕ ♖ ♗ ♘ ♙ ♚ ♛ ♜ ♝ ♞ ♟ ■ □

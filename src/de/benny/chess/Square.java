@@ -3,10 +3,10 @@ package de.benny.chess;
 import de.benny.chess.pieces.*;
 
 public class Square {
-    Piece piece;
-    Coordinates coordinates;
+    public Piece piece;
+    public Coordinates coordinates;
 
-    public Square(char column,int row,char fenChar){
+    public Square(char column, int row, char fenChar) {
         this.coordinates = new Coordinates(column, row);
         switch (fenChar) {
             case 'b', 'B' -> this.piece = new Bishop(fenChar);
@@ -18,22 +18,14 @@ public class Square {
         }
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return piece == null;
     }
 
-    public char print(){
-        if (isEmpty()){
+    public char print() {
+        if (isEmpty()) {
             return ' ';
         }
-        return this.piece.getFenChar();
-    }
-    //needed for test
-    @Override
-    public String toString() {
-        return "Square{" +
-                piece + " " +
-                coordinates +
-                '}';
+        return this.piece.getUniCode();
     }
 }

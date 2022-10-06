@@ -1,5 +1,10 @@
 package de.benny.chess.pieces;
 
+import de.benny.chess.Board;
+import de.benny.chess.Square;
+
+import java.util.List;
+
 public class Knight implements Piece{
 
     boolean white;
@@ -9,24 +14,21 @@ public class Knight implements Piece{
         }
     }
     @Override
-    public char getFenChar(){
+    public char getUniCode(){
         return '♘';
     }
 
     @Override
-    public void moveTo() {
-
+    public char getFenChar() {
+        return 0;
     }
+
 
     @Override
-    public void availableSquare() {
+    public List<Square> availableSquare(int row, int column, Board board) {
 
     }
 
-    @Override
-    public void capture() {
-
-    }
     @Override
     public String toString() {
         if (white){
