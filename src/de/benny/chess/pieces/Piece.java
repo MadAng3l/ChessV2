@@ -20,7 +20,7 @@ public abstract class Piece{
         return uniCode;
     }
 
-    char getFenChar() {
+    public char getFenChar() {
         return fenChar;
     }
 

@@ -64,6 +64,7 @@ public class Board {
             System.out.println();
         }
     }
+
     public void move(int row, int column, int newRow, int newColumn){
         Square square = squares[row][column];
         squares[newRow][newColumn].piece = square.piece;
