@@ -5,36 +5,14 @@ import de.benny.chess.Square;
 
 import java.util.List;
 
-public class Pawn implements Piece{
+public class Pawn extends Piece{
 
-    boolean white;
-    public Pawn(char fenChar){
-        if (fenChar == 'P'){
-            this.white = true;
-        }
+    public Pawn(boolean isWhite) {
+        super(isWhite ? '♟' : '♙', isWhite ? 'P' : 'p', isWhite);
     }
-    @Override
-    public char getUniCode(){
-        return '♙';
-    }
-
-    @Override
-    public char getFenChar() {
-        return 0;
-    }
-
 
     @Override
     public List<Square> availableSquare(int row, int column, Board board) {
-
-    }
-
-
-    @Override
-    public String toString() {
-        if (white){
-            return "White Pawn";
-        }
-        return "Black Pawn";
+        return null;
     }
 }

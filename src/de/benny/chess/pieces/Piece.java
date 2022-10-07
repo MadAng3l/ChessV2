@@ -16,7 +16,7 @@ public abstract class Piece{
 
     }
 
-    char getUniCode() {
+    public char getUniCode() {
         return uniCode;
     }
 

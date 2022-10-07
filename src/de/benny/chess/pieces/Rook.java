@@ -5,33 +5,14 @@ import de.benny.chess.Square;
 
 import java.util.List;
 
-public class Rook implements Piece {
-    boolean white;
-    public Rook(char fenChar){
-        if (fenChar == 'R'){
-            this.white = true;
-        }
-    }
-    @Override
-    public char getUniCode(){
-        return '♖';
-    }
+public class Rook extends Piece {
 
-    @Override
-    public char getFenChar() {
-        return 0;
+    public Rook(boolean isWhite) {
+        super(isWhite ? '♜' : '♖', isWhite ? 'R' : 'r', isWhite);
     }
 
     @Override
     public List<Square> availableSquare(int row, int column, Board board) {
-
-    }
-
-    @Override
-    public String toString() {
-        if (white){
-            return "White Rook";
-        }
-        return "Black Rook";
+        return null;
     }
 }

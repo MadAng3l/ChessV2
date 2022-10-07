@@ -9,7 +9,6 @@ public class Game {
         game.board.printToConsole();
         game.board.move(0,2,3,5);
         game.board.printToConsole();
-        //game.board.squareList.forEach(System.out::println);
     }
 
 }

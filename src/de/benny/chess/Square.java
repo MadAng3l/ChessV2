@@ -9,12 +9,18 @@ public class Square {
     public Square(char column, int row, char fenChar) {
         this.coordinates = new Coordinates(column, row);
         switch (fenChar) {
-            case 'b', 'B' -> this.piece = new Bishop(fenChar);
-            case 'k', 'K' -> this.piece = new King(fenChar);
-            case 'n', 'N' -> this.piece = new Knight(fenChar);
-            case 'p', 'P' -> this.piece = new Pawn(fenChar);
-            case 'q', 'Q' -> this.piece = new Queen(fenChar);
-            case 'r', 'R' -> this.piece = new Rook(fenChar);
+            case 'b' -> this.piece = new Bishop(false);
+            case 'B' -> this.piece = new Bishop(true);
+            case 'k' -> this.piece = new King(false);
+            case 'K' -> this.piece = new King(true);
+            case 'n' -> this.piece = new Knight(false);
+            case 'N' -> this.piece = new Knight(true);
+            case 'p' -> this.piece = new Pawn(false);
+            case 'P' -> this.piece = new Pawn(true);
+            case 'q' -> this.piece = new Queen(false);
+            case 'Q' -> this.piece = new Queen(true);
+            case 'r' -> this.piece = new Rook(false);
+            case 'R' -> this.piece = new Rook(true);
         }
     }
 

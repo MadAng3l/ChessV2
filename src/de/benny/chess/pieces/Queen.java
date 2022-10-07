@@ -5,34 +5,14 @@ import de.benny.chess.Square;
 
 import java.util.List;
 
-public class Queen implements Piece{
-    boolean white;
-    public Queen(char fenChar){
-        if (fenChar == 'Q'){
-            this.white = true;
-        }
-    }
-    @Override
-    public char getUniCode(){
-        return '♕';
-    }
+public class Queen extends Piece {
 
-    @Override
-    public char getFenChar() {
-        return 0;
+    public Queen(boolean isWhite) {
+        super(isWhite ? '♛' : '♕', isWhite ? 'Q' : 'q', isWhite);
     }
-
 
     @Override
     public List<Square> availableSquare(int row, int column, Board board) {
-
-    }
-
-    @Override
-    public String toString() {
-        if (white){
-            return "White Queen";
-        }
-        return "Black Queen";
+        return null;
     }
 }

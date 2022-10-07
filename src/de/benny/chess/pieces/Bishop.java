@@ -10,7 +10,6 @@ public class Bishop extends Piece {
 
     public Bishop(boolean isWhite) {
         super(isWhite? '♝':'♗',isWhite? 'B':'b',isWhite);
-
     }
 
     @Override

@@ -5,35 +5,14 @@ import de.benny.chess.Square;
 
 import java.util.List;
 
-public class Knight implements Piece{
+public class Knight extends Piece{
 
-    boolean white;
-    public Knight(char fenChar){
-        if (fenChar == 'N'){
-            this.white = true;
-        }
+    public Knight(boolean isWhite) {
+        super(isWhite ? '♞' : '♘', isWhite ? 'N' : 'n', isWhite);
     }
-    @Override
-    public char getUniCode(){
-        return '♘';
-    }
-
-    @Override
-    public char getFenChar() {
-        return 0;
-    }
-
 
     @Override
     public List<Square> availableSquare(int row, int column, Board board) {
-
-    }
-
-    @Override
-    public String toString() {
-        if (white){
-            return "White Knight";
-        }
-        return "Black Knight";
+        return null;
     }
 }
