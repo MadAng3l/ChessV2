@@ -1,8 +1,5 @@
 package de.benny.chess;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Board {
     //List<Square> squareList = new ArrayList<>();
     public Square[][] squares = new Square[8][8];
@@ -11,15 +8,6 @@ public class Board {
         //fillBoard();
         fillBoardByFEN(startFEN);
     }
-
-   /* private void fillBoard() {  //fills Board with squares that do not have a piece, but coordinates
-        for (int i = 1; i <= 8; i++) {
-            for (char c = 'A'; c <= 'H'; c++) {
-                Square square = new Square(c, i,'-');
-                squareList.add(square);
-            }
-        }
-    }*/
 
     private void fillBoardByFEN(String fen) { //Forsyth-Edwards-Notation, standart notation for describing a particular chess board position
         char column = 'A';
