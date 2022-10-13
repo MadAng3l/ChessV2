@@ -1,18 +1,11 @@
 package de.benny.chess.pieces;
 
-import de.benny.chess.Board;
-import de.benny.chess.Square;
-
-import java.util.List;
-
-public class King extends Piece {
-
+public class King extends DVPiece {
+    public static final int MAXSTEPS = 1;
+    public static final int[][] RUNDIRECTIONS = {{1,1},{1,-1},{-1,-1},{-1,1},{0,1},{1,0},{0,-1},{-1,0}};
     public King(boolean isWhite) {
-        super(isWhite? '♚':'♔',isWhite? 'K':'k',isWhite);
+        super(isWhite? '♚':'♔',isWhite? 'K':'k',isWhite, MAXSTEPS, RUNDIRECTIONS);
 
     }
-    @Override
-    public List<Square> availableSquare(int row, int column, Board board) {
-        return null;
-    }
+
 }

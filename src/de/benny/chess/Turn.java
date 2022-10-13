@@ -2,5 +2,11 @@ package de.benny.chess;
 
 public enum Turn {
    WHITE,
-   BLACK
+   BLACK;
+   public Turn nextTurn(){
+      if (this == WHITE){
+         return BLACK;
+      } else return WHITE;
+   }
 }
+

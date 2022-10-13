@@ -6,7 +6,7 @@ public class Square {
     public Piece piece;
     public Coordinates coordinates;
 
-    public Square(char column, int row, char fenChar) {
+    public Square(int column, int row, char fenChar) {
         this.coordinates = new Coordinates(column, row);
         switch (fenChar) {
             case 'b' -> this.piece = new Bishop(false);

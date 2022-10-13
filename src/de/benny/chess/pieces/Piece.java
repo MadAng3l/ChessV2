@@ -30,5 +30,14 @@ public abstract class Piece{
 
     public abstract List<Square> availableSquare(int row, int column, Board board);
 
+    public boolean validateMove(int row, int column, int newRow, int newColumn, Board board){
+        List <Square> validSquares = availableSquare(row, column, board);
+        for (Square square:validSquares){
+            if (square.coordinates.getColumn() == newColumn && square.coordinates.getRow() == newRow){
+                return true;
+            }
+        }
+        return false;
+    }
 }
 //♔ ♕ ♖ ♗ ♘ ♙ ♚ ♛ ♜ ♝ ♞ ♟ ■ □
