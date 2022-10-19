@@ -39,4 +39,5 @@ public abstract class DVPiece extends Piece{
         }
         return availableSquareList;
     }
+
 }
