@@ -48,7 +48,7 @@ public class Board {
         for (int i = 0; i<8; i++){
             for (int j = 0; j<8; j++){
                 Square square = squares[i][j];
-                System.out.print(square.print());
+                System.out.print("\t"+square.print());
             }
             System.out.println();
         }

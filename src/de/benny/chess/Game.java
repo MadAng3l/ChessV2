@@ -10,5 +10,4 @@ public class Game {
         game.board.move(1,2,4,2);
         game.board.printToConsole();
     }
-
 }
