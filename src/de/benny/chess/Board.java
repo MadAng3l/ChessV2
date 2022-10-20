@@ -45,25 +45,47 @@ public class Board {
 
 
     public void printToConsole(){
-        for (int i = 0; i<8; i++){
-            for (int j = 0; j<8; j++){
+        for (int i = 0; i<8; i++){     //rows 8 - 1
+            System.out.print("\t"+(8-i));
+            for (int j = 0; j<8; j++){ //columns A - H
                 Square square = squares[i][j];
                 System.out.print("\t"+square.print());
             }
             System.out.println();
         }
+        System.out.println("\t\tA\tB\tC\tD\tE\tF\tG\tH" );
+        System.out.println();
+        System.out.println("--------------------------------------");
+        System.out.println();
     }
 
-    public void move(int row, int column, int newRow, int newColumn){
+    public void move(int row, int column, int newRow, int newColumn) throws InvalidMoveException {
         Square square = squares[row][column];
         if (square.isEmpty()){
-            throw new IllegalArgumentException("Square is empty, cannot move");
+            throw new InvalidMoveException("Square is empty, cannot move");
         }
         Piece piece = square.piece;
         if (!piece.validateMove(row, column, newRow, newColumn, this)){
-            throw new IllegalArgumentException("Piece cannot move there");
+            throw new InvalidMoveException("Piece cannot move there");
         }
         squares[newRow][newColumn].piece = square.piece;
         square.piece = null;
+    }
+
+    public boolean isWhitePiece(int row, int column){
+        Square square = squares[row][column];
+        if (square.isEmpty()){
+            return false;
+        }
+        Piece piece = square.piece;
+        return piece.isWhite();
+    }
+    public boolean isBlackPiece(int row, int column){
+        Square square = squares[row][column];
+        if (square.isEmpty()){
+            return false;
+        }
+        Piece piece = square.piece;
+        return !piece.isWhite();
     }
 }

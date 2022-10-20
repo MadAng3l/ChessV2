@@ -15,9 +15,16 @@ public class Coordinates {
         return column;
     }
     public char getRowLabel(){
-        return ' ';
+        return (char)(8-row);
     }
     public char getColumnLabel(){
         return (char)('A' + column);
+    }
+    public static int[] convertCoordinates(String line){
+        char letter = line.charAt(0); //letter = 'A' + column
+        int row = 8 - (line.charAt(1) - '0');
+        int column = (letter - 'A');
+
+        return new int[]{row,column};
     }
 }

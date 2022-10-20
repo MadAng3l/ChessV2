@@ -24,7 +24,7 @@ public abstract class Piece{
         return fenChar;
     }
 
-    boolean isWhite() {
+    public boolean isWhite() {
         return isWhite;
     }
 
